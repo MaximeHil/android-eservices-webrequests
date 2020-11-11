@@ -28,8 +28,10 @@ public class BookToViewModelMapper {
 
     public List<BookViewItem> map(List<Book> bookList) {
         List<BookViewItem> bookViewItemList = new ArrayList<>();
-        for (Book book : bookList) {
-            bookViewItemList.add(map(book));
+        if(bookList != null) {
+            for (Book book : bookList) {
+                bookViewItemList.add(map(book));
+            }
         }
         return bookViewItemList;
     }

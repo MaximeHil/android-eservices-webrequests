@@ -15,6 +15,10 @@ public class BookSearchResponse {
         return bookList;
     }
 
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
+    }
+
     public int getTotalItems() {
         return totalItems;
     }

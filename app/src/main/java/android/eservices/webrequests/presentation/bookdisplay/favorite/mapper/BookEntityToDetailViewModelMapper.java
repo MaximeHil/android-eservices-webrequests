@@ -5,6 +5,8 @@ public class BookEntityToDetailViewModelMapper {
 
     //TODO
 
+
+
     private String languageMapper(String input) {
         switch (input) {
             case "en":
