@@ -132,7 +132,11 @@ public class SearchFragment extends Fragment implements BookActionInterface {
     @Override
     public void onFavoriteToggle(String bookId, boolean isFavorite) {
         //Handle add and deletion to favorites
-        bookFavoriteViewModel.handleToggleFavorite(bookId, isFavorite);
+        if(isFavorite){
+            bookFavoriteViewModel.addBookToFavorite(bookId);
+        } else {
+            bookFavoriteViewModel.removeBookFromFavorite(bookId);
+        }
     }
 
 }

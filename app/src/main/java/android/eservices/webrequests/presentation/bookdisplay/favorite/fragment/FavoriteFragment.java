@@ -57,7 +57,7 @@ public class FavoriteFragment extends Fragment implements BookDetailActionInterf
         bookFavoriteViewModel = new ViewModelProvider(requireActivity(), FakeDependencyInjection.getViewModelFactory()).get(BookFavoriteViewModel.class);
         System.out.println("FVVM is " + bookFavoriteViewModel);
 
-        /*bookFavoriteViewModel.getFavorites().observe(getViewLifecycleOwner(), new Observer<List<BookDetailViewItem>>() {
+        bookFavoriteViewModel.getFavoriteBooks().observe(getViewLifecycleOwner(), new Observer<List<BookDetailViewItem>>() {
             @Override
             public void onChanged(List<BookDetailViewItem> bookDetailViewItemList) {
                 bookAdapter.bindViewModels(bookDetailViewItemList);
@@ -76,7 +76,7 @@ public class FavoriteFragment extends Fragment implements BookDetailActionInterf
             public void onChanged(Event<String> stringEvent) {
                 //Do nothing
             }
-        });*/
+        });
     }
 
     private void setupRecyclerView() {
@@ -88,7 +88,7 @@ public class FavoriteFragment extends Fragment implements BookDetailActionInterf
 
     @Override
     public void onRemoveFavorite(String bookId) {
-        //bookFavoriteViewModel.removeBookFromFavorites(bookId);
+        bookFavoriteViewModel.removeBookFromFavorite(bookId);
         //System.out.println("Remove book " + bookId);
     }
 
